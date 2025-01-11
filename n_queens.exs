@@ -1,5 +1,5 @@
 #!/usr/bin/env elixir
-# By Sebastian Raaphorst, 2023.
+# By Sebastian Raaphorst, 2025.
 # Solving the n-queens problem using Elixir for practice.
 
 defmodule NQueens do
@@ -40,7 +40,7 @@ defmodule NQueens do
     n = board |> length
     board
     |> Enum.each(fn row ->
-      IO.puts(Enum.map(0..n-1, &(if &1 == row, do: "Q", else: "\u25A1")))
+      IO.puts(Enum.map(0..n-1, &(if &1 == row, do: "Q", else: ".")))
     end)
   end
 end
@@ -55,7 +55,7 @@ n
 |> NQueens.solve_n_queens
 |> Enum.with_index
 |> Enum.each(fn {board, idx} ->
-  IO.puts "Solution ##{idx}:"
+  IO.puts "Solution ##{idx+1}:"
   NQueens.print_board(board)
   IO.puts ""
 end)
